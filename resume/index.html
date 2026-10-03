@@ -39,3 +39,85 @@
       </ul>
     </article>
   </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <article>
+      <header>
+        <h3>Data Science Intern, IDX Exchange</h3>
+        <p>Remote</p>
+        <p>
+          <time datetime="2026-02">February 2026</time> &ndash;
+          <time datetime="2026-04">April 2026</time>
+        </p>
+      </header>
+      <ul>
+        <li>Built a leakage-free preprocessing pipeline for 75K+ California MLS records, using SQL to pull and join transaction data, then Python to remove outliers, impute missing values by ZIP-prefix, and scale features on the training set only.</li>
+        <li>Cut median home price prediction error from 20.9% to 7.40% by benchmarking five model families and combining LightGBM, XGBoost, and Random Forest into a weighted stacking ensemble, raising R&sup2; from 0.60 to 0.90.</li>
+        <li>Shipped a Streamlit pricing tool for California realtors and buyers, clustering 1,643 ZIP codes into 60 regional groups and encoding location features by historical closing price to hit 6.32% median error in the $500K&ndash;$1M segment.</li>
+      </ul>
+    </article>
+
+    <article>
+      <header>
+        <h3>Data Analyst, Halicioglu Data Science Institute (HDSI)</h3>
+        <p>La Jolla</p>
+        <p>
+          <time datetime="2025-09">September 2025</time> &ndash;
+          <time datetime="2025-12">December 2025</time>
+        </p>
+      </header>
+      <ul>
+        <li>Built an end-to-end Python recommendation pipeline over a user listening dataset, engineering audio-attribute features and applying k-nearest neighbors to generate personalized song recommendations.</li>
+        <li>Cleaned and validated raw data in pandas (deduplication, null handling, type normalization) and visualized listening-behavior distributions in matplotlib to guide feature selection.</li>
+        <li>Bootstrapped 2,000 resamples to test whether observed listening trends held up beyond sampling variation.</li>
+        <li>Tuned k and the distance metric on a held-out validation set, benchmarking against a popularity baseline.</li>
+      </ul>
+    </article>
+
+    <article>
+      <header>
+        <h3>AI Data Annotator, Handshake AI</h3>
+        <p>Remote</p>
+        <p>
+          <time datetime="2026-07">July 2026</time> &ndash; Present
+        </p>
+      </header>
+      <ul>
+        <li>Annotated multimodal training data used to fine-tune LLMs in a workspace dedicated to NVIDIA projects.</li>
+        <li>Applied audio-visual captioning across 100+ video clips, producing segment-level descriptions to project style guides.</li>
+        <li>Maintained a 95% review pass rate and escalated ambiguous edge cases, informing refinements to annotation guidelines.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <article>
+      <header>
+        <h3>League of Legends Early-Game Win Prediction</h3>
+        <p><time datetime="2025-12">December 2025</time></p>
+        <p>Python, Pandas, Seaborn, Scikit-learn</p>
+      </header>
+      <ul>
+        <li>Engineered 10 difference-based features from 40 columns across 9,879 League of Legends matches by computing team differentials for kills, objectives, and economy, then dropping redundant metrics identified through heatmap analysis.</li>
+        <li>Predicted 10-minute early-game match outcomes at 82% accuracy on a held-out test set by training a StandardScaler-normalized logistic regression model, achieving balanced classification across wins and losses.</li>
+        <li>Discovered through logistic regression coefficients that gold difference was the dominant win predictor while kill differential was near-negligible, learning that kills matter primarily through the economic advantage they generate.</li>
+      </ul>
+    </article>
+
+    <article>
+      <header>
+        <h3>Recipe Cook Time Prediction</h3>
+        <p><time datetime="2026-06">June 2026</time></p>
+        <p>Python, Pandas, Plotly, Scikit-learn, NumPy</p>
+      </header>
+      <ul>
+        <li>Cleaned and merged raw recipe datasets totaling 110K+ records by removing outliers across 10 numerical columns, unpacking nutrition data into structured feature columns, and engineering a time variable from recipe tags using regex.</li>
+        <li>Reduced prediction RMSE from 20.62 to 4.44 minutes by building a scikit-learn pipeline with StandardScaler, OrdinalEncoder, and RandomForestRegressor tuned via GridSearchCV, lifting test R&sup2; from 0.18 to 0.96.</li>
+        <li>Validated model fairness across high- and low-calorie recipe groups with a p-value of 0.0 by conducting a permutation test on absolute RMSE differences, confirming statistically significant performance disparity.</li>
+      </ul>
+    </article>
+  </section>
