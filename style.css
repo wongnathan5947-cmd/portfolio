@@ -2,5 +2,6 @@ body {
   font-family: sans-serif;   
   line-height: 1.5;          
   max-width: 100ch;
-  margin-inline: max(1em, (100% - 100ch) / 2);
-  }
+  margin-inline: auto;
+  padding: 1em;
+}
