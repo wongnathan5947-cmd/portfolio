@@ -88,3 +88,82 @@ h1, h2, h3, h4, h5, h6 {
 .projects h2 {
   margin: 0;
 }
+
+
+
+.resume h1 {
+  font-size: 250%;      
+  margin-block: 0.3em 0.1em;
+}
+
+.resume section {
+  margin-block: 2em;
+}
+
+.resume h2 {
+  font-size: 110%;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  border-bottom: 1px solid oklch(80% 3% 200);
+  padding-bottom: 0.25em;
+  margin-bottom: 1em;
+}
+
+.resume article {
+  margin-bottom: 1.5em;
+}
+
+.resume article header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1em;
+  align-items: baseline;
+}
+
+.resume article header h3 {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  font-size: 110%;
+}
+
+.resume article header p {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 90%;
+  color: oklch(45% 3% 200);
+}
+
+.resume article header p:has(time) {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.resume ul {
+  margin-block: 0.5em 0;
+  padding-left: 1.25em;
+}
+
+.resume li {
+  margin-bottom: 0.35em;
+}
+
+/* Skills list: no bullets */
+.resume section:last-of-type ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resume a:hover {
+  color: var(--color-accent);
+}
+
+/* Hide the menu when printing or saving as PDF */
+@media print {
+  .resume nav {
+    display: none;
+  }
+}
