@@ -7,7 +7,8 @@ body {
 }
 
 html {
-  --color-accent: oklch(65% 50% 145); /* green */
+  color-scheme: light dark;
+  --color-accent: oklch(65% 50% 145); 
   accent-color: var(--color-accent);
 }
 
@@ -17,9 +18,10 @@ nav li {
 }
 
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
   margin-bottom: 1em;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -31,7 +33,7 @@ nav a {
 }
 
 nav a.current {
-  border-bottom: 0.4em solid oklch(80% 3% 200);
+  border-bottom: 0.4em solid var(--border-color);
   padding-bottom: 0.1em;
   font-weight: bold;
 }
@@ -39,13 +41,21 @@ nav a.current {
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 input,
 textarea,
-button {
+button,
+select {
   font: inherit;
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
 }
 
 form {
@@ -105,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-accent);
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid oklch(50% 10% 200 / 40%);
   padding-bottom: 0.25em;
   margin-bottom: 1em;
 }
@@ -132,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
   grid-column: 1 / -1;
   margin: 0;
   font-size: 90%;
-  color: oklch(45% 3% 200);
+  color: color-mix(in oklch, canvastext, canvas 40%);
 }
 
 .resume article header p:has(time) {
@@ -151,7 +161,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.35em;
 }
 
-/* Skills list: no bullets */
 .resume section:last-of-type ul {
   list-style: none;
   padding-left: 0;
@@ -161,7 +170,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-accent);
 }
 
-/* Hide the menu when printing or saving as PDF */
 @media print {
   .resume nav {
     display: none;
