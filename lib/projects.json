@@ -1,18 +1,21 @@
 [
     {
-        "title": "Hi i'm nathan",
+        "title": "League of Legends Early Game Prediction",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "I'm from San Jose, California."
+        "description": "An exploratory analysis and machine learning modeling of early-game League of Legends data, featuring feature engineering, visualization, and win prediction using logistic regression."
     },
     {
-        "title": "this is my projects page",
+        "title": "Recipe Analysis",
+        "year": 2026,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Example of 3 projects on the home page."
+        "description": "This project captures various steps of analysis, starting from exploratory data analysis to hypothesis testing, creation of baseline models, and concluding with fairness analysis."
     },
     {
-        "title": "I like playing guitar",
+        "title": "DSC 106 Project 2",
+        "year": 2026,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "I've been playing guitar for 3 years."
+        "description": "Visualizations created to convey two sides of a proposition. The project involves a dataset with aid assistance, and country GDP information."
     },
     {
         "title": "Iusto possimus incidunt dolor!",
