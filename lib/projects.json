@@ -1,13 +1,13 @@
 [
     {
         "title": "League of Legends Early Game Prediction",
-        "year": 2025,
+        "year": 2024,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "An exploratory analysis and machine learning modeling of early-game League of Legends data, featuring feature engineering, visualization, and win prediction using logistic regression."
     },
     {
         "title": "Recipe Analysis",
-        "year": 2026,
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "This project captures various steps of analysis, starting from exploratory data analysis to hypothesis testing, creation of baseline models, and concluding with fairness analysis."
     },
@@ -19,46 +19,55 @@
     },
     {
         "title": "Iusto possimus incidunt dolor!",
+        "year": 2023,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Voluptatum dicta facilis officia suscipit, ex, excepturi omnis, id deserunt ad quis a aliquam maiores harum dolores neque saepe fuga quo qui. Ullam non quod corrupti obcaecati optio vero totam."
     },
     {
         "title": "Quos, quisquam id. Quibusdam!",
+        "year": 2023,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Accusantium reiciendis ex ea eius maxime? Rerum fugit culpa corrupti nemo a? Fuga, obcaecati ut voluptas commodi nisi, enim saepe nostrum sint ad corrupti qui repellat labore ex quis aut."
     },
     {
         "title": "Suscipit ipsa alias neque.",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Eligendi est voluptate pariatur nesciunt iusto veniam vitae? Ratione unde, expedita tenetur saepe quisquam perferendis. Quasi labore repudiandae ratione ducimus iste recusandae cumque distinctio quos mollitia officiis consequuntur, aut natus!"
     },
     {
         "title": "Aliquam earum iusto esse!",
+        "year": 2026,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Omnis, distinctio adipisci. Nihil totam consequatur quis fugit sit tempora dolorum ea reprehenderit. Consequuntur tempora nulla rerum eos praesentium autem culpa, eum aspernatur quas illo dignissimos distinctio! Qui, iusto consectetur?"
     },
     {
         "title": "Impedit consectetur vel libero!",
+        "year": 2024,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Fuga consequatur quaerat doloremque modi at rem itaque facilis accusantium culpa? Explicabo iste mollitia officia ad ducimus, numquam error porro nostrum, molestiae voluptates maxime voluptas amet est ullam. Et, repudiandae."
     },
     {
         "title": "Vitae quibusdam id blanditiis.",
+        "year": 2021,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Aspernatur quas suscipit sit natus exercitationem nisi, temporibus error, consequuntur distinctio fugiat maiores cum a voluptas optio enim? Ducimus itaque sequi animi assumenda eaque debitis qui beatae reprehenderit optio laboriosam!"
     },
     {
         "title": "Repellendus culpa qui voluptates.",
+        "year": 2023,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Ratione odio dolorem veritatis sed repudiandae eligendi delectus rem consequatur magnam animi. Dolorem ut sed accusamus eaque debitis ad hic inventore, distinctio rerum, nulla consequuntur accusantium, odit aliquid iure aliquam."
     },
     {
         "title": "Quasi maiores laborum illum.",
+        "year": 2022,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Consequatur esse corporis culpa doloremque temporibus? At, minus voluptatibus dolores nam fuga illo vero quod similique voluptatum quam corporis ab ratione temporibus ut harum molestias consequatur, maiores ea nihil in."
     },
     {
         "title": "Culpa quos enim nisi!",
+        "year": 2026,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Fugit dicta illum dolorem minima nemo quaerat. Quod consectetur laudantium nemo eos, sit repellendus libero voluptates repudiandae atque perspiciatis aperiam? Fuga magni iusto non laudantium explicabo, laboriosam eveniet quae accusantium?"
     }
