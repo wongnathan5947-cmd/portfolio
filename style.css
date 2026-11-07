@@ -8,7 +8,7 @@ body {
 
 html {
   color-scheme: light dark;
-  --color-accent: oklch(65% 50% 145); 
+  --color-accent: #8b5a2b; 
   accent-color: var(--color-accent);
 }
 
