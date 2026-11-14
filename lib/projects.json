@@ -9,7 +9,8 @@
         "title": "Recipe Analysis",
         "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "This project captures various steps of analysis, starting from exploratory data analysis to hypothesis testing, creation of baseline models, and concluding with fairness analysis."
+        "description": "Interactive Mapbox and D3 map of Bluebikes traffic in the Boston area. Circle size shows trip volume, color shows whether a station has more departures or arrivals, and a time slider filters the data by time of day."
+        
     },
     {
         "title": "DSC 106 Project 2",
@@ -18,10 +19,11 @@
         "description": "Visualizations created to convey two sides of a proposition. The project involves a dataset with aid assistance, and country GDP information."
     },
     {
-        "title": "Iusto possimus incidunt dolor!",
-        "year": 2023,
+        "title": "Boston Bike Watching",
+        "year": 2026,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Voluptatum dicta facilis officia suscipit, ex, excepturi omnis, id deserunt ad quis a aliquam maiores harum dolores neque saepe fuga quo qui. Ullam non quod corrupti obcaecati optio vero totam."
+        "description": "Voluptatum dicta facilis officia suscipit, ex, excepturi omnis, id deserunt ad quis a aliquam maiores harum dolores neque saepe fuga quo qui. Ullam non quod corrupti obcaecati optio vero totam.",
+        "url": "https://wongnathan5947-cmd.github.io/Boston-Bike-Traffic/"
     },
     {
         "title": "Quos, quisquam id. Quibusdam!",
