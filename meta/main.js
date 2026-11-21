@@ -2,6 +2,7 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 
 let xScale;
 let yScale;
+let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
 async function loadData() {
   const data = await d3.csv('loc.csv', (row) => ({
@@ -309,7 +310,8 @@ function updateFileDisplay(filteredCommits) {
     let lines = filteredCommits.flatMap((d) => d.lines);
     let files = d3
       .groups(lines, (d) => d.file)
-      .map(([name, lines]) => ({ name, lines }));
+      .map(([name, lines]) => ({ name, lines }))
+      .sort((a, b) => b.lines.length - a.lines.length);
   
     let filesContainer = d3
       .select('#files')
@@ -336,7 +338,8 @@ function updateFileDisplay(filteredCommits) {
           .selectAll('div')
           .data((d) => d.lines)
           .join('div')
-          .attr('class', 'loc');
+          .attr('class', 'loc')
+          .attr('style', (d) => `--color: ${colors(d.type)}`);
   }
 
 let data = await loadData();
