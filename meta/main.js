@@ -281,6 +281,8 @@ let timeScale = d3
   .range([0, 100]);
 let commitMaxTime = timeScale.invert(commitProgress);
 
+let filteredCommits = commits;
+
 const slider = document.getElementById('commit-progress');
 const sliderTime = document.getElementById('slider-time');
 
@@ -291,6 +293,13 @@ function onTimeSliderChange() {
     dateStyle: 'long',
     timeStyle: 'short',
   });
+
+  filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
+  updateScatterPlot(data, filteredCommits);
+  renderCommitInfo(
+    filteredCommits.flatMap((d) => d.lines),
+    filteredCommits,
+  );
 }
 
 slider.addEventListener('input', onTimeSliderChange);
