@@ -345,88 +345,61 @@ function updateFileDisplay(filteredCommits) {
           .attr('style', (d) => `--color: ${colors(d.type)}`);
   }
 
-let data = await loadData();
-let commits = processCommits(data);
-
-renderCommitInfo(data, commits);
-renderScatterPlot(data, commits);
-
-let commitProgress = 100;
-
-let timeScale = d3
-  .scaleTime()
-  .domain([
-    d3.min(commits, (d) => d.datetime),
-    d3.max(commits, (d) => d.datetime),
-  ])
-  .range([0, 100]);
-let commitMaxTime = timeScale.invert(commitProgress);
-
-let filteredCommits = commits;
-
-const slider = document.getElementById('commit-progress');
-const sliderTime = document.getElementById('slider-time');
-
-function applyCommitMaxTime() {
-  sliderTime.textContent = commitMaxTime.toLocaleString('en', {
-    dateStyle: 'long',
-    timeStyle: 'short',
-  });
-
-  filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
-  updateScatterPlot(data, filteredCommits);
-  updateFileDisplay(filteredCommits);
-  renderCommitInfo(
-    filteredCommits.flatMap((d) => d.lines),
-    filteredCommits,
-  );
-}
-
-function onTimeSliderChange() {
-    commitProgress = Number(slider.value);
-    commitMaxTime = timeScale.invert(commitProgress);
-    applyCommitMaxTime();
+  let data = await loadData();
+  let commits = processCommits(data);
+  
+  renderCommitInfo(data, commits);
+  renderScatterPlot(data, commits);
+  
+  let filteredCommits = commits;
+  
+  function setMaxTime(maxTime) {
+    filteredCommits = commits.filter((d) => d.datetime <= maxTime);
+    updateScatterPlot(data, filteredCommits);
+    updateFileDisplay(filteredCommits);
+    renderCommitInfo(
+      filteredCommits.flatMap((d) => d.lines),
+      filteredCommits,
+    );
   }
+  
+  setMaxTime(commits[0].datetime);
+  
+  d3.select('#scatter-story')
+    .selectAll('.step')
+    .data(commits)
+    .join('div')
+    .attr('class', 'step')
+    .html(
+      (d, i) => `
+        On ${d.datetime.toLocaleString('en', {
+          dateStyle: 'full',
+          timeStyle: 'short',
+        })},
+        I made <a href="${d.url}" target="_blank">${
+          i > 0 ? 'another glorious commit' : 'my first commit, and it was glorious'
+        }</a>.
+        I edited ${d.totalLines} lines across ${
+          d3.rollups(
+            d.lines,
+            (D) => D.length,
+            (d) => d.file,
+          ).length
+        } files.
+        Then I looked over all I had made, and I saw that it was very good.
+      `,
+    );
+  
+  function onStepEnter(response) {
+    setMaxTime(response.element.__data__.datetime);
+  }
+  
+  const scroller = scrollama();
+  scroller
+    .setup({
+      container: '#scrolly-1',
+      step: '#scrolly-1 .step',
+    })
+    .onStepEnter(onStepEnter);
 
-slider.addEventListener('input', onTimeSliderChange);
-onTimeSliderChange();
-
-d3.select('#scatter-story')
-  .selectAll('.step')
-  .data(commits)
-  .join('div')
-  .attr('class', 'step')
-  .html(
-    (d, i) => `
-      On ${d.datetime.toLocaleString('en', {
-        dateStyle: 'full',
-        timeStyle: 'short',
-      })},
-      I made <a href="${d.url}" target="_blank">${
-        i > 0 ? 'another glorious commit' : 'my first commit, and it was glorious'
-      }</a>.
-      I edited ${d.totalLines} lines across ${
-        d3.rollups(
-          d.lines,
-          (D) => D.length,
-          (d) => d.file,
-        ).length
-      } files.
-      Then I looked over all I had made, and I saw that it was very good.
-    `,
-  );
-
-function onStepEnter(response) {
-    commitMaxTime = response.element.__data__.datetime;
-    commitProgress = timeScale(commitMaxTime);
-    slider.value = commitProgress;
-    applyCommitMaxTime();
-}
-    
-const scroller = scrollama();
-scroller
-  .setup({
-    container: '#scrolly-1',
-    step: '#scrolly-1 .step',
-  })
-  .onStepEnter(onStepEnter);
+    document.querySelector('.slider-row')?.remove();

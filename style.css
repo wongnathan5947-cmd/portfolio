@@ -352,23 +352,12 @@ circle.selected {
   fill: #ff6b6b;
 }
 
-.slider-row {
-  display: flex;
-  align-items: baseline;
-}
-.slider-row label {
-  flex: 1;
-  display: flex;
-  align-items: baseline;
-  gap: 1em;
-}
-.slider-row time {
-  margin-left: auto;
-}
-
 #files {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 3fr;
+  max-height: 35vh;
+  overflow-y: auto;
+  margin: 0;
 }
 
 #files > div {
@@ -379,6 +368,13 @@ circle.selected {
 
 #files dt {
   grid-column: 1;
+  font-size: 0.8em;
+}
+
+#files dt small {
+  display: block;
+  font-size: 0.8em;
+  opacity: 0.6;
 }
 
 #files dd {
@@ -387,48 +383,65 @@ circle.selected {
   flex-wrap: wrap;
   align-items: start;
   align-content: start;
-  gap: 0.15em;
-  padding-top: 0.6em;
+  gap: 0.12em;
+  padding-top: 0.3em;
   margin-left: 0;
-   }
-  
-  
-#files dt small {
-  display: block;
-  font-size: 0.8em;
-  opacity: 0.6;
-  }
-  
-  .loc {
+}
+
+.loc {
   display: flex;
-  width: 0.5em;
+  width: 0.4em;
   aspect-ratio: 1;
   background: var(--color, steelblue);
   border-radius: 50%;
-  }
+}
 
+/* ---- Scrollytelling ---- */
 #scrolly-1 {
   position: relative;
   display: flex;
   gap: 1rem;
-  
-  > * {
-    flex: 1;
-  }
-  }
-  
+}
+
 #scatter-story {
   position: relative;
-  }
-  
+  flex: 1;
+}
+
+/* Sticky panel: scatter plot on top, file sizes below.
+   80vh tall and pinned 10vh from the top, so it's centered in the viewport. */
 #scatter-plot {
   position: sticky;
-  top: 0;
-  left: 0;
-  bottom: auto;
-  height: 50vh;
-  }
-  
-  .step {
-    padding-bottom: 5rem;
-  }
+  top: 10vh;
+  align-self: flex-start;
+  flex: 2;
+  height: 80vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+#scatter-plot #chart svg {
+  display: block;
+  width: 100%;
+  max-height: 35vh;
+}
+
+#scatter-plot #selection-count {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+#scatter-plot dl.stats {
+  margin: 0;
+}
+
+#scatter-plot dl.stats dd {
+  font-size: 1.1em;
+}
+
+.step {
+  padding-bottom: 5rem;
+}
